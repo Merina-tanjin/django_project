@@ -11,10 +11,33 @@ from django.contrib.auth.hashers import make_password
 # import pdfkit
 
 
+# def index(request):
+  
+#     return render(request, "core/index.html")
+
+@login_required
+def dashboard(request):
+    user_id = request.user.id
+
+    try:
+        cv_id = Cv.objects.filter(user_id=user_id).values_list('id', flat=True)
+        cv_id = list(cv_id)
+        cv_id = cv_id[0]
+        print('Cv ID is',cv_id)
+        print('Data type',type(cv_id))
+        if isinstance(cv_id, int):
+            context = {'status':'there_is_cv'}
+            return render(request, 'core/dashboard.html', context)
+    except Exception as e:
+        context = {'status':'no_cv'}
+        return render(request, 'core/dashboard.html', context)    
+
 
 def dashboard(request):
   
     return render(request, "core/dashboard.html")
+
+
 def createCv(request):
     user_id = request.user.id
 

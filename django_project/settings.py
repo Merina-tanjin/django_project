@@ -133,7 +133,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# AUTH_USER_MODEL = 'core.User'
+# AUTH_USER_MODEL = 'User'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

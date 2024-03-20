@@ -15,7 +15,7 @@ from django.contrib.auth.hashers import make_password
   
 #     return render(request, "core/index.html")
 
-@login_required
+# @login_required
 def dashboard(request):
     user_id = request.user.id
 

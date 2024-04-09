@@ -1,28 +1,32 @@
-{% include 'core/header.html' %}
+
+{% include 'users/header.html' %}
 {% load static %}
 
-<div id="content-wrapper" class="mt-4" style="padding-top: 1%;">
-     <div class="container-fluid">
+<div id="content-wrapper" class="mt-4" style="padding-top: 1%, ;
+;" 
+>
+    
+     <div class="container-fluid" >
        <div class="card mb-2 col-md-12">
-           <div class="card-body">
-               <div class="row">
+           <div class="card-body" style="background-color: #dcf0fa;">
+               <div class="row" >
                    <div class="col-md-4">
                        <img src="{% static 'img/Resume-icon-1.png' %}" style="padding-left: 20%;">
                    </div>
                    <div class="col-md-7">
 
-                       <h1 class="text-primary">Build Your Amazing Cv</h1>
+                       <h1 class="text-primary">Build Your Own Resume</h1>
 
-                       <p class="welcome_text">A Simple & Quick Way To Create A New Cv</p>
-                       <p class="welcome_text">Fill In The Blank Form, Generate And Download PDF Cv</p>
-                      
+                       <p class="welcome_text">A Simple & Quick Way To Create A New Resume</p>
+                       <p class="welcome_text">Fill In The Blank Form, Generate And Download PDF version</p>
+
                        {% if status == 'there_is_cv' %}
                        <a href="{% url 'createcv' %}">
                         <button class="btn btn-primary">Create Cv</button>
                        </a>
                        
 
-                    <a href="{% url 'cv-detail'  id=request.user.cv.id %}">
+                    <!-- <a href="{% url 'cv-detail'  id=request.user.cv.id %}">
                         <button class="btn btn-info">View Cv</button>
                     </a>
   
@@ -40,14 +44,15 @@
                         <button class="btn btn-primary">Create Cv</button>
                        </a>
 
-                       {% endif %}
+                       {% endif %} -->
 
 
+                       <a href=""><button class="startBtn">Get Started</button></a>
                        <br/>
                        <br/>
                        <br/>
 
-                    {% include 'core/footer.html' %}
+                    {% include 'users/footer.html' %}
                    </div>
                </div>
            </div>

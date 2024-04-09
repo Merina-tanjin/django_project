@@ -53,10 +53,7 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
     path('', include('blog.urls')),
-
-        path('', include('core.urls')),
-
-
+    path('', include('users.urls')),
 
 ]
 

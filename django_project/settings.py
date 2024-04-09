@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
-    'core.apps.CoreConfig',
     'crispy_forms',
     'crispy_bootstrap4',
     'django.contrib.admin',
@@ -127,8 +126,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    # os.path.join(BASE_DIR, 'static'),
 )
+# django.contrib.staticfiles.finders.FileSystemFinder
+# django.contrib.staticfiles.finders.AppDirectoriesFinder
 # uploaded file will be stored here
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
